@@ -1,4 +1,4 @@
-#Mi Scene - CIS 400 Social Media Mining term project
+#Mi Scene - CIS 400 Social Media Mining project
 
 This project uses the Twitter and Spotify APIs to lookup a Spotify Artist's top
 Twitter followers with geographic information and plot the data in a Node.js
@@ -6,6 +6,7 @@ web app using the Google Maps Javascript API. All of the data is stored in a
 local MongoDB instance.
 
 ##There are two main interactive parts to the project:
+
 #### Part One:
 1. Populate the MongoDB instance with data
   1. we must first install MongoDB (instructions below) and Python on our local machine
@@ -20,6 +21,7 @@ local MongoDB instance.
   7. Once your script is done running, we can check the MongoDB instance, by navigating to the /data/db directory and running the Mongo Shell with "mongo"
     + "db.influential_followers.find().pretty()" will show us all of our data formatted in a nice way
     + We can also search by artist or username by using find() with the following syntax: find({"Artist": "Basement"})
+
 #### Part Two:
 2. Display relevant data in the Node.js web app
   1. Once our database is populated, we should start up our local web app instance
@@ -33,4 +35,4 @@ local MongoDB instance.
 + Simply follow the instructions to download the most basic version of the Community Edition
   + SSL/TSL support is not necessary, and for safety do not install the latest development release
 + Make sure that the database is configured at 'mongodb://localhost:27017/test'
-  + This is the URL that the Python scripts as well as the web app use to access the local MongoDB instance 
+  + This is the URL that the Python scripts as well as the web app use to access the local MongoDB instance
