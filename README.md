@@ -36,3 +36,6 @@ local MongoDB instance.
   + SSL/TSL support is not necessary, and for safety do not install the latest development release
 + Make sure that the database is configured at 'mongodb://localhost:27017/test'
   + This is the URL that the Python scripts as well as the web app use to access the local MongoDB instance
+
+###NOTE:
+Master Branch contains final submission for CIS400 class, Working branch contains a version that is currently deemed "in progress"

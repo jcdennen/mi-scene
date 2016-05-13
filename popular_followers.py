@@ -59,40 +59,6 @@ def oauth_login():
     twitter_api = twitter.Twitter(auth=auth)
     return twitter_api
 
-# crawl_followers function from Twitter Cookbook
-def crawl_followers(twitter_api, screen_name, limit=1000000, depth=2):
-
-    # Resolve the ID for screen_name and start working with IDs for consistency
-    # in storage
-
-    seed_id = str(twitter_api.users.show(screen_name=screen_name)['id'])
-
-    _, next_queue = get_friends_followers_ids(twitter_api, user_id=seed_id,
-                                              friends_limit=limit, followers_limit=limit)
-
-    # Store a seed_id => _follower_ids mapping in MongoDB
-
-    # save_to_mongo({'followers' : [ _id for _id in next_queue ]}, 'followers_crawl',
-                #   '{0}-follower_ids'.format(seed_id))
-
-    d = 1
-    while d < depth:
-        d += 1
-        (queue, next_queue) = (next_queue, [])
-        for fid in queue:
-            _, follower_ids = get_friends_followers_ids(twitter_api, user_id=fid,
-                                                     friends_limit=0,
-                                                     followers_limit=limit)
-
-            # Store a fid => follower_ids mapping in MongoDB
-            # save_to_mongo({'followers' : [ _id for _id in follower_ids ]},
-                        #   'followers_crawl', '{0}-follower_ids'.format(fid))
-
-            print "followers :"
-            print follower_ids
-
-            next_queue += follower_ids
-
 # save_to_mongo function taken from Twitter Cookbook
 def save_to_mongo(data, mongo_db, mongo_db_coll):
 
