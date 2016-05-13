@@ -52,7 +52,6 @@ def main():
     save_to_mongo(mongo_object, 'test', 'influential_followers')
 
 # oauth_login() function taken from Twitter Cookbook
-# TODO: MOVE TO A SEPARATE MODULE
 def oauth_login():
     # gets imported credentials
     auth = twitter.OAuth(twitter_credentials.ACCESS_TOKEN, twitter_credentials.ACCESS_TOKEN_SECRET, twitter_credentials.CONSUMER_KEY, twitter_credentials.CONSUMER_SECRET)
