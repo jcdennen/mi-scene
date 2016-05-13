@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* CUSTOM CSS HERE */
+.individual-artist {
+  margin-bottom: 20px;
+}
+.artist-map {
+  height: 300px;
+  /*width: 100%;*/
+}
+.artist-box {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  height: 300px;
+  position: relative;
+}
+.artist-box-link {
+  color: black;
+  font-size: 50px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  opacity: 0.75;
+}

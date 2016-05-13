@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  p Mining Twitter to explore an artist's fan base
+  if errorMessage
+    h2= errorMessage
+  else  
+    .container
+      each val, index in artistObjects
+        if val['spotify_info']['images']
+          .row.individual-artist
+            .col-sm-6
+              .artist-box(style="background-image: url(" + val['spotify_info']['images'][0]['url'] + ");")
+                a.artist-box-link(href=val['spotify_info']['external_urls']['spotify'])=val['spotify_info']['name']
+            //- .artist-box-2.col-sm-3
+            //-     a.artist-box-link(href=val['spotify_info']['external_urls']['spotify'])=val['spotify_info']['name']
+            //-       img.artist-box-img(href="#{val['spotify_info']['images'][0]['url']}")
+            //- .col-sm-3
+            .map-wrapper.col-sm-6
+              .artist-map(id=val['username'])
